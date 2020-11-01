@@ -1,6 +1,5 @@
 import numpy as np
 import os
-from os.path import dirname, join as pjoin
 files = os.listdir('hueta')
 dir = os.listdir('data/result_phonemes — копия')
 for g in range(len(files)):
