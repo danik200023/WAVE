@@ -2,6 +2,7 @@ import numpy as np
 from math import sqrt, floor
 import os
 from os.path import join as pjoin
+import subprocess
 from scipy.io import wavfile
 
 directories = os.listdir('C:/Users/Dmitry/Desktop/666/Wave_data/data/result_phonemes — копия')
@@ -47,7 +48,7 @@ for d in directories:
                 R = cov / (sqrt(sum4 - sum2 ** 2) * sqrt(sum5 - sum3 ** 2))
                 X[g][k] = R
         np.save(f, X)
-        os.system('cls')
+        subprocess.call('/bin/cls')
         print('Current directory: ' + str(d))
         print(str(directories.index(d)) + '/' + str(len(directories)))
         print('Current file: ' + str(f))
