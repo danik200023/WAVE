@@ -1,30 +1,26 @@
 import numpy as np
-import tensorflow as tf
-from keras.models import Sequential
-#import torch
 import matplotlib.pyplot as plt
-import PyQt5
 from math import sqrt, floor
-import os
-from os.path import dirname, join as pjoin
-import scipy.io as sio
+from os.path import join as pjoin
 from scipy.io import wavfile
 
 wav_fname = pjoin('data/result_phonemes/A/00ca367f-979b-4ba7-a487-94344dda9a64.wav')
 np.set_printoptions(suppress=True, threshold=np.inf) # threshold=np.inf
 wavrate, wavdata = wavfile.read(wav_fname)
-N = 50
+N = 16
+N1 = 30
 M = len(wavdata)
 # print(M)
-X = np.ndarray((floor(M / N) - 1, N))
-for g in range(floor(M / N) - 1):
-    for k in range(0, N):
+X = np.ndarray((N1 - 1, N))
+# X = np.ndarray((floor(M / N) - 1, N))
+for g in range(N1 - 1):
+    for k in range(N):
         sum1 = np.float(0)
         sum2 = np.float(0)
         sum3 = np.float(0)
         sum4 = np.float(0)
         sum5 = np.float(0)
-        for i in range(0 + g * N, N + g * N):
+        for i in range(0 + g * floor(M / N1), N + g * floor(M / N1)):
             sum1 += np.float64(wavdata[i]) * np.float64(wavdata[i + k])
             sum2 += wavdata[i]
             sum3 += wavdata[i + k]

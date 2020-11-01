@@ -1,13 +1,6 @@
 import numpy as np
-import tensorflow as tf
-from keras.models import Sequential
-import torch
-import matplotlib.pyplot as plt
-import PyQt5
-from math import sqrt, floor
 import os
-from os.path import dirname, join as pjoin
-import scipy.io as sio
+from os.path import join as pjoin
 from scipy.io import wavfile
 
 directories = os.listdir('data/Dima/')
@@ -18,7 +11,6 @@ for d in directories:
 
     for f in files:
         wav_fname = pjoin('data/Dima/' + d + '/' + f)
-        # np.set_printoptions(suppress=True)# threshold=np.inf
         wavrate, wavdata = wavfile.read(wav_fname)
         M = len(wavdata)
         H[t] = M
