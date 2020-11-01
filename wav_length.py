@@ -1,6 +1,7 @@
 import numpy as np
 import os
 from os.path import join as pjoin
+import subprocess
 from scipy.io import wavfile
 
 directories = os.listdir('data/Dima/')
@@ -14,7 +15,7 @@ for d in directories:
         wavrate, wavdata = wavfile.read(wav_fname)
         M = len(wavdata)
         H[t] = M
-        os.system('cls')
+        subprocess.call('/bin/cls')
         print('Current directory: ' + str(d))
         print(str(directories.index(d)) + '/' + str(len(directories)))
         print('Current file: ' + str(f))
