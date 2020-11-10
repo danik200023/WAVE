@@ -17,7 +17,7 @@ for d in directories:
         np.set_printoptions(suppress=True, threshold=np.inf)  # threshold=np.inf
         wavrate, wavdata = wavfile.read(wav_fname)
         N = 25
-        N1 = 30
+        N1 = 50
         M = len(wavdata)
         if len(wavdata) > 1250:
             wavdata = np.delete(wavdata, wavdata[1250:len(wavdata) - 1])
