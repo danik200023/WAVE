@@ -1,3 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.zip filter=lfs diff=lfs merge=lfs -text
+phonemes_data_square.npy filter=lfs diff=lfs merge=lfs -text
+phonemes_data.npy filter=lfs diff=lfs merge=lfs -text
