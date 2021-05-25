@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Training files
+arch/output/
+arch/result_kartinka/
+speech_units/
+speech_units_result/
+
 # Distribution / packaging
 .Python
 build/
